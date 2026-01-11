@@ -1,6 +1,3 @@
-Here is the technical design documentation formatted as a professional `README.md` file.
-
----
 
 # Industrial PCB Inspection VLM: Low-Latency, Structured Output System
 
@@ -198,8 +195,5 @@ Evaluation focuses on metrology and reliability rather than linguistic fluency.
 
 ---
 
-## Design Philosophy
 
-**Do not ask a general VLM to "understand" a PCB.**
 
-This system treats the Language Model not as a visionary, but as a logic processor for a deterministic vision system. The LLM's role is strictly to interpret the user's query and format the Vision Encoder's findings into a structured response.

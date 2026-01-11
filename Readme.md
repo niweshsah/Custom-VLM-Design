@@ -1,22 +1,6 @@
 
 # Industrial PCB Inspection VLM: Low-Latency, Structured Output System
 
-## Overview
-
-This project implements a custom Vision-Language Model (VLM) designed specifically for offline, high-precision Printed Circuit Board (PCB) inspection. Unlike general-purpose VLMs (LLaVA, BLIP-2), this architecture is engineered to handle dense, small-object industrial metrology.
-
-The system processes natural language queries regarding defects and returns structured, deterministic JSON outputs containing bounding box locations and confidence scores. It is optimized for inference times under 2 seconds on edge hardware (e.g., RTX A4000, Orin) and is trained on a dataset of 50,000 images with bounding box annotations (no native QA pairs).
-
-## Key System Constraints & Objectives
-
-* **Inference Latency:** < 2 seconds (offline).
-* **Input Data:** 50k images with bounding box annotations.
-* **Output Format:** Structured JSON (Location + Confidence).
-* **Hallucination Rate:** Near-zero (Strict architectural constraints).
-* **Deployment:** Offline, localized hardware.
-
----
-
 ## 1. Architecture Design
 
 The system rejects the standard "Global Image Token" approach used in models like LLaVA, which leads to poor spatial grounding for small defects. Instead, it utilizes a **Detection-First, Language-Second** architecture.
